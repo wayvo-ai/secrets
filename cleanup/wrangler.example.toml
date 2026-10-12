@@ -1,0 +1,19 @@
+# Scheduled retention Worker for the D1 database.
+# Template: `pnpm dev` and `pnpm preview` copy this to cleanup/wrangler.toml
+# (gitignored) when it is missing. Use the same D1 name and ID as wrangler.toml.
+name = "secrets-cleanup"
+main = "index.ts"
+compatibility_date = "2026-07-01"
+# No public route: this Worker only has a scheduled handler.
+workers_dev = false
+
+[triggers]
+crons = ["17 4 * * *"]
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "secrets"
+database_id = "00000000-0000-0000-0000-000000000000"

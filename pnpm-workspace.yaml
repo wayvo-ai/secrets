@@ -1,0 +1,10 @@
+overrides:
+  undici: ^7.30.0
+  sharp: ^0.35.5
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+  # Its postinstall only fetches a fallback binary; the platform-specific package is installed directly.
+  unrs-resolver: false

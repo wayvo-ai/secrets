@@ -1,0 +1,53 @@
+{
+  "name": "wayvo-secrets",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.9.1",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "next build && node scripts/headers.mjs",
+    "preview": "node scripts/wrangler-config.mjs && wrangler pages dev out",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write --unsafe",
+    "typecheck": "tsc --noEmit",
+    "format": "biome format --write",
+    "format:check": "biome format",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "dev:frontend": "next dev",
+    "cleanup:deploy": "wrangler deploy -c cleanup/wrangler.toml",
+    "prepare": "husky"
+  },
+  "type": "module",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@cloudflare/workers-types": "^5.20261012.1",
+    "@next/env": "^16.4.0",
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "esbuild": "^0.28.2",
+    "husky": "^9.1.7",
+    "miniflare": "^4.20260730.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.149.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.55.0",
+    "next": "^16.4.0",
+    "radix-ui": "^1.8.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0"
+  }
+}

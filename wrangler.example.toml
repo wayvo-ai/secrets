@@ -1,0 +1,30 @@
+# Template: `pnpm dev` and `pnpm preview` copy this to wrangler.toml (gitignored)
+# when it is missing. Put your own resource names and D1 ID in that copy.
+name = "secrets"
+pages_build_output_dir = "out"
+compatibility_date = "2026-07-01"
+
+[vars]
+SITE_ORIGIN = "https://secrets.wayvo.ai"
+TURNSTILE_HOSTNAME = "verify.secrets.wayvo.ai"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "secrets"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "secrets-ciphertext"
+
+# Preview deployments are deliberately inert and have no production data bindings.
+# Configure separate resources and secrets before enabling a staging environment.
+[env.preview]
+d1_databases = []
+r2_buckets = []
+
+[env.preview.vars]
+DEPLOYMENT_ENABLED = "false"
+SITE_ORIGIN = "https://preview.invalid"
+TURNSTILE_HOSTNAME = "preview.invalid"

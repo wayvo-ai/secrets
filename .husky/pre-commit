@@ -1,0 +1,6 @@
+# Format staged files in place and re-stage them, then lint and typecheck the
+# whole project. The full gate (tests, build) remains `pnpm check`.
+pnpm exec biome format --write --staged --no-errors-on-unmatched
+git update-index --again
+pnpm lint
+pnpm typecheck

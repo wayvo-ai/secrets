@@ -1,0 +1,57 @@
+@import "tailwindcss";
+:root {
+  --ink: #172039;
+  --muted: #646b80;
+  --line: #e3e1ec;
+  --accent: #8524d6;
+  --paper: #faf9fc;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+@theme inline {
+  --color-primary: var(--accent);
+  --color-primary-foreground: #ffffff;
+  --color-background: #ffffff;
+  --color-foreground: var(--ink);
+  --color-muted-foreground: var(--muted);
+  --color-input: #c8c0d5;
+  --color-ring: #aa71e2;
+  --color-destructive: #a53c28;
+  --color-accent: #f2ecfa;
+  --color-accent-foreground: var(--ink);
+  --color-secondary: #f2ecfa;
+  --color-secondary-foreground: var(--ink);
+  --color-card: #ffffff;
+  --color-card-foreground: var(--ink);
+  --color-border: var(--line);
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  a:not([data-slot]):focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 4px;
+  }
+}

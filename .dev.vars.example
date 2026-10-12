@@ -1,0 +1,8 @@
+SITE_ORIGIN=http://localhost:8788
+TURNSTILE_HOSTNAME=localhost
+# Cloudflare's public test secret, never use in production.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+RATE_LIMIT_SALT=local-development-only-replace-with-random-production-secret
+
+# Only honored for loopback requests with Cloudflare public test keys.
+LOCAL_TURNSTILE_TESTING=true
