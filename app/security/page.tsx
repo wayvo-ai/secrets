@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "How security works",
+  description:
+    "How Wayvo Secrets encrypts secrets in your browser with AES-256-GCM, keeps keys in the link fragment, and enforces a single reveal with an atomic claim.",
+  alternates: { canonical: "/security" },
+};
 export default function Security() {
   return (
     <article className="prose">

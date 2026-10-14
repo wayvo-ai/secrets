@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Privacy",
+  description:
+    "What Wayvo Secrets stores, for how long, and what it never sees: no accounts, no emails, no encryption keys. Encrypted envelopes are deleted after one reveal.",
+  alternates: { canonical: "/privacy" },
+};
 export default function Privacy() {
   return (
     <article className="prose">
