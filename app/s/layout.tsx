@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description,
   openGraph: {
     type: "website",
+    url: "/s",
     siteName: "Wayvo Secrets",
     title,
     description,

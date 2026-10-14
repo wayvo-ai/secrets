@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
+    url: "/",
     siteName: "Wayvo Secrets",
     title: "Wayvo Secrets — Share a secret, just once.",
     description: socialDescription,
